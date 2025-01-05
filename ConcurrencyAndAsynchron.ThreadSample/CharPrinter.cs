@@ -10,8 +10,19 @@ namespace ConcurrencyAndAsynchron.ThreadSample
     {
         public void printStar()
         {
-            for (int i = 0; i < 1000; i++) { Console.Write("*"); }
+            for (int i = 0; i < 1000; i++)
+            {
+                Console.Write("*");
+                Thread.Yield();
+            }
         }
-        public void PrintDash() { for (int i = 0; i < 1000; i++) { Console.Write("-"); } }
+        public void PrintDash()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                Console.Write("-");
+                Thread.Sleep(TimeSpan.FromSeconds(5));
+            }
+        }
     }
 }
