@@ -1,4 +1,4 @@
 ﻿using ConcurrencyAndAsynchron.ThreadSample;
 
-SharedAndLocalState sharedAndLocalState = new SharedAndLocalState();
-sharedAndLocalState.Start();
+PassDataSample passDataSample = new PassDataSample();
+passDataSample.PrintNumber(20);
