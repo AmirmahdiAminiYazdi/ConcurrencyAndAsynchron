@@ -1,5 +1,4 @@
 ﻿using ConcurrencyAndAsynchron.ThreadSample;
 
-MethodThreadSamples tms = new();
-tms.TreadStateCheck();
-
+SharedAndLocalState sharedAndLocalState = new SharedAndLocalState();
+sharedAndLocalState.Start();
