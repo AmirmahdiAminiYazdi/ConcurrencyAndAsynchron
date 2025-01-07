@@ -1,4 +1,4 @@
 ﻿using ConcurrencyAndAsynchron.ThreadSample;
 
-PassDataSample passDataSample = new PassDataSample();
-passDataSample.PrintNumber(20);
+ThreadPrioritySample threadPrioritySample = new ThreadPrioritySample();
+threadPrioritySample.Start();
