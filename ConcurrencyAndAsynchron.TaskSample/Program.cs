@@ -1,4 +1,4 @@
 ﻿using ConcurrencyAndAsynchron.TaskSample;
 
-RunTaskSample runTaskSample = new RunTaskSample();
-runTaskSample.StartCold();
+ExceptionSample exceptionSample = new ExceptionSample();
+exceptionSample.Start();
