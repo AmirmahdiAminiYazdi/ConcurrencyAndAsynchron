@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,14 +25,21 @@ namespace ConcurrencyAndAsynchron.TaskSample
         public void Start2()
         {
             Task<int> sumResult = Task.Run(() => Sum(500, 600));
-            sumResult.ContinueWith(t => Console.WriteLine("After sum"));
+            var stopWatch = new Stopwatch();
+            //sumResult.ContinueWith(t => Console.WriteLine("After sum"));
+         
+            Task.Delay(5000).ContinueWith(t => Console.WriteLine("After sum"));
+         
+            Console.WriteLine($"after delay : {stopWatch.ElapsedMilliseconds}");
             Console.ReadLine();
+            
         }
 
 
 
         public int Sum(int num1, int num2)
         {
+            Console.WriteLine("Sum");
             Thread.Sleep(3000);
             return num1 + num2;
         }
