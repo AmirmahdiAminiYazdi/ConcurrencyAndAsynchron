@@ -26,16 +26,25 @@ namespace ConcurrencyAndAsynchron.TaskSample
         {
             Task<int> sumResult = Task.Run(() => Sum(500, 600));
             var stopWatch = new Stopwatch();
-            //sumResult.ContinueWith(t => Console.WriteLine("After sum"));
-         
-            Task.Delay(5000).ContinueWith(t => Console.WriteLine("After sum"));
-         
-            Console.WriteLine($"after delay : {stopWatch.ElapsedMilliseconds}");
+            sumResult.ContinueWith(t => Console.WriteLine("After sum"));
+        
             Console.ReadLine();
             
         }
 
+        public void Start3()
+        {
+            var stopwatch = new System.Diagnostics.Stopwatch();
+            stopwatch.Start(); // start
 
+            Task.Delay(5000).ContinueWith(t =>
+            {
+                stopwatch.Stop(); // stop
+                Console.WriteLine($"Elapsed time: {stopwatch.ElapsedMilliseconds} ms");
+            });
+
+            Console.ReadLine();
+        }
 
         public int Sum(int num1, int num2)
         {
